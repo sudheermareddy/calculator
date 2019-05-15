@@ -1,35 +1,17 @@
 pool:
   name: Hosted Ubuntu 1604
-  demands: java
+variables:
+  rg_name: 'coldchain'
 
 steps:
-- task: SonarCloudPrepare@1
-  displayName: 'Prepare analysis on SonarCloud'
-  inputs:
-    SonarCloud: sudheersonar
-    organization: 'sudheer-mareddy50022'
-    scannerMode: CLI
-    configMode: manual
-    cliProjectKey: testnode
-    cliProjectName: run
-
-- task: NodeTool@0
-  displayName: 'Use Node 10.x'
-  inputs:
-    versionSpec: 10.x
-
 - bash: |
-   npm install
-   
-   npm run build
-   
-   #npm run test
-   
-   
-  displayName: 'Bash Script'
+   ls
 
-- task: SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis'
+pool:
+  name: Hosted Ubuntu 1604
+variables:
+  rg_name: 'coldchain'
 
-- task: SonarCloudPublish@1
-  displayName: 'Publish Quality Gate Result'
+steps:
+- bash: |
+   ls
