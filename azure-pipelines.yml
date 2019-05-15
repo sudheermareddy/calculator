@@ -7,11 +7,6 @@ steps:
 - bash: |
    ls
 
-pool:
-  name: Hosted Ubuntu 1604
-variables:
-  rg_name: 'coldchain'
-
-steps:
-- bash: |
-   ls
+- script: 
+   pwd
+   echo "sudheer"
